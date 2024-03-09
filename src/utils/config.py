@@ -1,4 +1,5 @@
 """Module with config for whole project."""
+
 from pydantic_settings import BaseSettings
 
 

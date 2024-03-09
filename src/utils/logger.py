@@ -1,4 +1,5 @@
 """Module with method to create logger."""
+
 import logging
 
 from src.utils.config import config
