@@ -36,4 +36,6 @@ max-doc-length = 120
     "D", # Exclude docstring checks on tests.
     "S101", # Allow asserts in tests.
     "ANN201", # Disable return types in tests.
+    "PTH", # Disable 'Path' checks rules in tests.
+    "PLR2004" # Constant values are allowed in tests.
 ]
