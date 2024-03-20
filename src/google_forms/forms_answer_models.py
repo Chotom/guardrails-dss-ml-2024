@@ -13,9 +13,13 @@ class BaseAnswerModel(BaseModel, ABC):
     """Base class for all google forms answer questions.
 
     Attributes:
-        question_id: ID of the item (Item.item_id).
         answer: Answer to the question.
     """
 
-    question_id: str
     answer: int | str | list[str]
+
+
+class TextQuestionAnswer(BaseAnswerModel):
+    """Answer for text question."""
+
+    answer: str
