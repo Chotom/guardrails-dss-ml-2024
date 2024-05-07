@@ -8,13 +8,33 @@ indent-width = 4
 # Rules list: https://docs.astral.sh/ruff/rules/
 select = ["ALL"]
 ignore = [
-    "RET504", # For easier debug and better code readability this rule is disabled.
     "ANN101", # The rule has been deprecated since ruff 0.2.0.
     "ANN102", # The rule has been deprecated since ruff 0.2.0.
+    "ANN401", # typing.Any is allowed in special cases caused by external packages.
+    "RET504", # For easier debug and better code readability this rule is disabled.
+    "FIX002", # TODOs are allowed during developement process.
     "TD002", # Link to issue should already assigne author.
-    "COM812", # Conflict with ruff format.
-    "ISC001", # Conflict with ruff format.
-    "E501", # Line too long, handled by ruff format.
+    "D401", # Imperative mood in function description is not required.
+    "UP032", # Doesnt work in some cases.
+    "PTH", # Pathlib is not required.
+    "TCH002", # Type hinting section in import sorting is not required.
+
+    # Below rules has conflict with formatting and should be disabled.
+    # Docs with explantion: https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules.
+    "W191",
+    "E111",
+    "E114",
+    "E117",
+    "D206",
+    "D300",
+    "COM812",
+    "COM819",
+    "ISC001",
+    "ISC002",
+    "Q000",
+    "Q001",
+    "Q002",
+    "Q003",
 ]
 
 [tool.ruff.format]
@@ -29,13 +49,3 @@ convention = "google"
 
 [tool.ruff.lint.pycodestyle]
 max-doc-length = 120
-
-[tool.ruff.lint.per-file-ignores]
-# Ignore rules on tests.
-"tests/**" = [
-    "D", # Exclude docstring checks on tests.
-    "S101", # Allow asserts in tests.
-    "ANN201", # Disable return types in tests.
-    "PTH", # Disable 'Path' checks rules in tests.
-    "PLR2004" # Constant values are allowed in tests.
-]

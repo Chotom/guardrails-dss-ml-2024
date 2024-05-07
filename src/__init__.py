@@ -1,1 +1,1 @@
-"""Python source code for the survey-llm-filler."""
+"""Python source code for tech demo."""

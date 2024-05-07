@@ -1,1 +1,1 @@
-"""Package with code utilities for mumar project."""
+"""Package with code utilities for project."""
