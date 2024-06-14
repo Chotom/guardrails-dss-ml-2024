@@ -1,0 +1,15 @@
+rails:
+  input:
+# Reference to self_check_input task in prompts.yml.
+    flows:
+      - self check input
+
+
+
+
+
+
+p
+
+
+

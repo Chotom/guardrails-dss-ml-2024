@@ -2,7 +2,7 @@
 
 import logging
 
-from src.utils.config import config
+LOG_LEVEL: str = "DEBUG"
 
 
 def create_logger(logger_name: str) -> logging.Logger:
@@ -18,13 +18,13 @@ def create_logger(logger_name: str) -> logging.Logger:
     formatter = logging.Formatter(log_format)
 
     logger = logging.getLogger(logger_name)
-    logger.setLevel(config.LOG_LEVEL)
+    logger.setLevel(LOG_LEVEL)
     if len(logger.handlers):
         return logger
 
     # Console handler
     console_handler = logging.StreamHandler()
-    console_handler.setLevel(config.LOG_LEVEL)
+    console_handler.setLevel(LOG_LEVEL)
     console_handler.setFormatter(formatter)
     logger.addHandler(console_handler)
 

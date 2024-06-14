@@ -19,6 +19,7 @@ ignore = [
     "PTH", # Pathlib is not required.
     "TCH002", # Type hinting section in import sorting is not required.
     "G004", # This is not production ready project, we can freely usese f-strings in loggers.
+    "BLE", # For this project siwtched off.
 
     # Below rules has conflict with formatting and should be disabled.
     # Docs with explantion: https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules.

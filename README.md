@@ -4,9 +4,6 @@ This repository contains resources for the speech _"Keeping LLMs on Track: A Pra
 Techniques, Frameworks, and Use Cases."_ presented at
 the [Data Science Summit 2024 Machine Learning Edition](https://ml.dssconf.pl/).
 
-> [!NOTE]
-> Tutorial, materials and source code will be available here **after** the conference.
-
 ## Abstract
 
 The speech focuses on the challenges of quality and safety in large language model (LLM) outputs and how to
@@ -21,7 +18,7 @@ enabling their responsible deployment in real-world scenarios.
 1. Introduction (Brief overview and problem definition).
 2. Safety issues in generated content.
 3. Guardrail: introduction and definition.
-4. Demo usage and overview for the selected Guardrails tools.
+4. Guardrails: Usage and overview.
 5. Conclusions and Recommendations.
 
 ## Project structure
@@ -31,4 +28,20 @@ enabling their responsible deployment in real-world scenarios.
 ├── 📂 docs - Directory with tutorial and presented materials.
 ├── 📂 runs - Directory for benchmark results.
 └── 📂 src  - Directory with source code.
+    ├── 📂 guardrailsai - Directory with guardrails ai.
+    ├── 📂 nemo_guardrail - Directory with nemo guardrail.
+    ├── 📂 utils - Directory with utility modules.
+    ├── 📄 gather_results.py - Script for gathering benchmark results from runs.
+    ├── 📄 run_benchmark.py - Script for running benchmark for single run_llm function.
+    └── 📄 run_llm.py - Module with LLMs with guardrails.
 ```
+
+### Guardrails coanfigs
+
+- Nemo Guardrail config: [src/nemo_guardrails/config/config.yaml](./src/nemo_guardrails/config/config.yml)
+  and [src/nemo_guardrails/config/prompts.yaml](./src/nemo_guardrails/config/prompts.yml)
+- Guardrails AI config: [src/guardrailsai/guardrails_config.py](./src/guardrailsai/guardrails_config.py)
+
+## Results
+
+![llm_garak_benchmark_result.png](docs/llm_garak_benchmark_result.svg)

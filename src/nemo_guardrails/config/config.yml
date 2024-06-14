@@ -1,0 +1,35 @@
+rails:
+  # Config for Presidio, docs: https://microsoft.github.io/presidio/supported_entities/
+  config:
+    sensitive_data_detection:
+      recognizers:
+        - name: "Competitor mention recognizer"
+          supported_language: "en"
+          supported_entity: "COMPETITOR"
+          deny_list:
+            - openai
+            - amazon
+            - chatgpt
+            - gpt-3
+      retrieval:
+        entities:
+          - LOCATION
+          - EMAIL_ADDRESS
+          - PERSON
+          - PHONE_NUMBER
+          - PL_PESEL
+          - COMPETITOR
+
+  # Guardrails for input
+  input:
+    flows:
+      # This is a reference to the prompt task self_check_input in prompts.yml.
+      - self check input
+      - mask sensitive data on retrieval  # or 'detect sensitive data on retrieval'
+
+  # Guardrails for output
+  output:
+    flows:
+      # This is a reference to the prompt task self_check_output in prompts.yml.
+      - self check output
+      - mask sensitive data on retrieval  # or 'detect sensitive data on retrieval'
